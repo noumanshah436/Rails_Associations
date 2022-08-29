@@ -44,6 +44,47 @@ tes in console:
 ***************************
 has_and_belongs_to_many Association
 ***************************
+https://guides.rubyonrails.org/v5.2/association_basics.html#has-and-belongs-to-many-association-reference
+
+we will join student and course model:
 
 rails g model Course name:string description:text
 rails db:migrate
+
+1) add this to student model class
+has_and_belongs_to_many :courses
+
+2) add this to Course model class
+has_and_belongs_to_many :students
+
+3) generate migration to create join table:
+rails g migration create_course_student_join_table
+
+create_join_table :courses , :students                -- use lexical order to create join table
+
+rails db:migrate
+
+***********
+associate records:
+
+course1 = Course.find(1)
+course2 = Course.find(2)
+course3 = Course.find(3)
+
+assign student a course:
+std1 = Student.find(1)                        --  fetch student
+std1.courses << course1                       --  assign student a course
+std1.courses                                  -- fetch all courses of student
+std1.courses << course2 << course3            -- assign multiple courses
+
+you can also assign courses to students
+course1 = Course.find(1)
+std1 = Student.find(1)
+std2 = Student.find(2)
+std3 = Student.find(3)
+std4 = Student.find(4)
+course1.students << std2 << std3 << std4
+course1.students
+std1.courses.size                                   --  see count of courses of this student
+std1.courses.find(2)                                -- find course with id=2
+

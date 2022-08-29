@@ -23,3 +23,10 @@
 #   student.blogs.create(title: "Student#{student.id} Blog 1" , content:"Dummy Content 1 for #{student.name}")
 #   student.blogs.create(title: "Student#{student.id} Blog 2" , content:"Dummy Content 2 for #{student.name}")
 # end
+
+
+# create courses
+# Course.create(name:"Ruby on Rails" , description:"Course description ")
+# Course.create(name:"React" , description:"Course description ")
+# Course.create(name:"Python" , description:"Course description ")
+# Course.create(name:"Java development" , description:"Course description ")
