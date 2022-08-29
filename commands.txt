@@ -4,6 +4,7 @@ rails g controller home index
 
 ***************************
 one to many relationship:
+***************************
 
 rails g model Student name:string email:string
 rails db:migrate
@@ -41,3 +42,8 @@ tes in console:
 
 
 ***************************
+has_and_belongs_to_many Association
+***************************
+
+rails g model Course name:string description:text
+rails db:migrate
