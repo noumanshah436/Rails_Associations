@@ -22,7 +22,19 @@ account.supplier.name
 ************************************************************************************************************
 has_one :through
 ************************************************************************************************************
-use has one through when you want to associate two models using third model
+
+Use has_one_through when you want to associate two models using third model
+For examle:
+If each Department has one Manager, and each Manager is associated with one Managerhistory,
+then the Department model could look like this.( see diagram )
+
+In docs:
+supplier = Department
+Accout = manager
+account history = manager history
+
+***********
+
 
 1) create models
 rails g model department name:string

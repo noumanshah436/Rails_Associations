@@ -63,8 +63,6 @@ has_many :through
 this method will implement many to many relationship using third model
 
 
-
-
 # create project model
 rails g model project name:string description:text
 rails db:migrate
