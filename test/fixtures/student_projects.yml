@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student: one
+  project: one
+  submission_date: 2022-08-29
+
+two:
+  student: two
+  project: two
+  submission_date: 2022-08-29
