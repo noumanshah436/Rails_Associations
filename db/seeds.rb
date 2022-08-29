@@ -11,9 +11,15 @@
 # student = Student.create( name: "Nouman", email: "nouman@gmail.com")
 
 # create 20 student
-20.times do |i|
-  puts "creating Student#{i+1}"
-  Student.create(
-    name: "Student#{i+1}",
-    email: "student#{i+1}@gmail.com")
-end
+# 20.times do |i|
+#   puts "creating Student#{i+1}"
+#   Student.create(
+#     name: "Student#{i+1}",
+#     email: "student#{i+1}@gmail.com")
+# end
+
+# add 2 blogs for each student:
+# Student.all.each do |student|
+#   student.blogs.create(title: "Student#{student.id} Blog 1" , content:"Dummy Content 1 for #{student.name}")
+#   student.blogs.create(title: "Student#{student.id} Blog 2" , content:"Dummy Content 2 for #{student.name}")
+# end
