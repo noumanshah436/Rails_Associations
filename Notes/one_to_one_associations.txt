@@ -24,3 +24,7 @@ has_one :through
 ************************************************************************************************************
 
 
+rails g model department name:string
+rails g model manager name:string email:string contact:string department:references
+rails g model manager_history joining_date:date total_experience:integer manager:references
+rails db:migrate
