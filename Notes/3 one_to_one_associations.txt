@@ -22,9 +22,35 @@ account.supplier.name
 ************************************************************************************************************
 has_one :through
 ************************************************************************************************************
+use has one through when you want to associate two models using third model
 
-
+1) create models
 rails g model department name:string
 rails g model manager name:string email:string contact:string department:references
 rails g model manager_history joining_date:date total_experience:integer manager:references
 rails db:migrate
+
+2) add this to department model
+has_one :manager
+has_one :manager_history, through: :manager
+
+3) add records:
+
+dept1 = Department.create(name: "Production department")
+dept2 = Department.create(name: "Accounts department")
+
+manager = Manager.create(name: "Nouman", email: "noman@gmail.com" , contact: "03335465765", department_id: dept1.id)
+manager.department
+
+dept1.manager
+
+manager_history = ManagerHistory.create( joining_date: Date.today - 100.days , total_experience: 2, manager_id: Manager.first.id)
+manager_history.manager
+
+manager = Manager.find(1)
+manager.manager_history
+
+dept1.manager_history
+
+manager_history.department   --  give error bec there is not association that manager_history belongs to department
+                                  so we cannt accesss department through manager_history
