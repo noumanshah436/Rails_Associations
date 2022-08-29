@@ -1,3 +1,6 @@
+cheetsheet:
+https://web-crunch.com/posts/understanding-active-record-associations
+
 rails new Associations
 rails g controller home index
 

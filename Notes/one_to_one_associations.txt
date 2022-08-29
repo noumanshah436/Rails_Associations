@@ -1,0 +1,18 @@
+rails g model Supplier name:string
+rails db:migrate
+
+rails g model Account account_number:string supplier:references
+rails db:migrate
+
+1) add ( has_one :account ) in parent model
+both model msut use singular name for association
+
+supplier = Supplier.create(name: "Nouman")
+
+account = Account.create(account_number: 123, supplier_id: supplier.id)
+
+supplier.account
+supplier.account.account_number
+
+account.supplier
+account.supplier.name

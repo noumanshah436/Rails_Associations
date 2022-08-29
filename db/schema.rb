@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_29_114536) do
+ActiveRecord::Schema.define(version: 2022_08_29_132741) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer "account_number"
+    t.integer "supplier_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_id"], name: "index_accounts_on_supplier_id"
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -53,6 +61,12 @@ ActiveRecord::Schema.define(version: 2022_08_29_114536) do
   create_table "students", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suppliers", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
