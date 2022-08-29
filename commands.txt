@@ -4,3 +4,18 @@ rails g controller home index
 
 
 rails g model Student name:string email:string
+rails db:migrate
+
+***************************
+
+rails generate model Blog title:string content:text student:references       ( we can manually add foreign key but this is better - this will also add belongsto stat in blog model)
+rails db:migrate
+and add ( has_many :blogs ) to stuent model
+
+
+to do manually
+add column in blog table  --  t.integer :student_id in
+and then add belongs_to :student in blog model
+and add ( has_many :blogs ) to stuent model
+
+***************************
