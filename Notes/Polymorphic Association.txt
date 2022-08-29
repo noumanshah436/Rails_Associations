@@ -1,0 +1,7 @@
+we need Polymorphic Association when we multiple parent models are their for a single child
+
+With polymorphic associations, a model can belong to more than one other model, on a single association.
+
+For example, you might have a picture model that belongs to either an employee model or a product model.
+
+

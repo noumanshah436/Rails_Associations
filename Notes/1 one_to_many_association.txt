@@ -43,3 +43,16 @@ test in console:
 -> blog.student_id
 -> blog.student.name
 
+
+****************
+
+class Student < ApplicationRecord
+  has_many :blogs
+end
+
+class Blog < ApplicationRecord
+  belongs_to :student
+end
+
+
+****************
