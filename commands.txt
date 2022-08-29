@@ -89,15 +89,48 @@ std1.courses.size                                   --  see count of courses of 
 std1.courses.find(2)                                -- find course with id=2
 
 
+( using join table we cannt add extra attribute , or callbacks or validations to the ralationship table
+ because we do not have model for that )
+
 https://guides.rubyonrails.org/v5.2/association_basics.html#choosing-between-has-many-through-and-has-and-belongs-to-many
 
 
 ************************************************************************************************************
 has_many :through
 ************************************************************************************************************
+this method will implement many to many relationship using third model
 
+
+
+
+# create project model
 rails g model project name:string description:text
 rails db:migrate
 
+# creating relationship model b/w student and project
 rails g model student_project student:references project:references submission_date:date
 rails db:migrate
+
+1) add this to project model class:
+has_many :student_projects
+has_many :students, through: :student_projects
+
+2)  add this to student  model class:
+has_many :student_projects
+has_many :projects, through: :student_projects
+
+*****
+
+std = Student.first
+std.projects
+Project.create(name: "Driver app")
+Project.create(name: "School management app")
+Project.count
+
+StudentProject.create( student_id: 1, project_id: 1 , submission_date: Date.today + 20.days )
+std = Student.find(1)
+std.projects
+
+p = Project.find(1)
+p.students
+
