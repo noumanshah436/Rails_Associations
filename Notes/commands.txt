@@ -89,7 +89,7 @@ std1.courses.size                                   --  see count of courses of 
 std1.courses.find(2)                                -- find course with id=2
 
 
-( using join table we cannt add extra attribute , or callbacks or validations to the ralationship table
+( using join_table we cannt add extra attribute , or callbacks or validations to the ralationship table
  because we do not have model for that )
 
 https://guides.rubyonrails.org/v5.2/association_basics.html#choosing-between-has-many-through-and-has-and-belongs-to-many

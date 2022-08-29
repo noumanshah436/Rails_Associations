@@ -1,0 +1,15 @@
+In Rails, an association is a connection between two Active Record models. 
+
+Why do we need associations between models? 
+Because they make common operations simpler and easier in your code.
+
+
+
+has_many :
+
+one-to-many relationship:
+
+use has_many macro in parent 
+use belongs_to in child model
+
+each instance of parent model has zero or more instances of another model
