@@ -1,0 +1,6 @@
+rails new Associations
+rails g controller home index
+
+
+
+rails g model Student name:string email:string
