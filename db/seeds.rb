@@ -30,3 +30,10 @@
 # Course.create(name:"React" , description:"Course description ")
 # Course.create(name:"Python" , description:"Course description ")
 # Course.create(name:"Java development" , description:"Course description ")
+
+
+# Article.create(title: "Article1", text: "text article 1")
+# Article.create(title: "Article2", text: "text article 2")
+
+# News.create(title: "News1", text: "text News 1")
+# News.create(title: "News2", text: "text News 2")
