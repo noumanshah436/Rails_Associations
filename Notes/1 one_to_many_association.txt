@@ -19,8 +19,8 @@ rails db:migrate
 and add ( has_many :blogs ) in stuent model
 
 
-to do manually
-add column in blog table in migration  --  t.integer :student_id in
+To do manually:
+add column in blog table in migration  --  t.integer :student_id
 and then add belongs_to :student in blog model
 and add ( has_many :blogs ) to stuent model
 
@@ -28,21 +28,6 @@ and add ( has_many :blogs ) to stuent model
 Note:
 use singular name with belongs_to :student            ( hint: use file name of the model class)
 use plural name with   has_many :blogs                ( hint: use the table name in the database)
-
-********
-test in console:
-
--> Blog.count
--> Student.count
--> std1 = Student.first
--> std1.blogs
-
--> blog = Blog.last
--> std = blog.student
--> std
--> blog.student_id
--> blog.student.name
-
 
 ****************
 
@@ -56,3 +41,20 @@ end
 
 
 ****************
+test in console:
+
+-> Blog.count
+-> Student.count
+-> std1 = Student.first
+-> std1.blogs                   #  use blogs ( plural as menthion with has_many statement )
+
+-> blog = Blog.last
+-> std = blog.student
+-> std
+-> blog.student_id
+-> blog.student.name             #  use student ( singular as menthion with belongs_to statement )
+
+****************
+
+
+
