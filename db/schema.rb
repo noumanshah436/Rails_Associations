@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_29_174732) do
+ActiveRecord::Schema.define(version: 2022_09_02_142441) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "account_number"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 2022_08_29_174732) do
 
   create_table "departments", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "account"
+    t.integer "employee_id"
+    t.integer "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -116,6 +124,13 @@ ActiveRecord::Schema.define(version: 2022_08_29_174732) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "coach_id"
   end
 
 end
