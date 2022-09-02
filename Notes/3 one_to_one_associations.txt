@@ -2,7 +2,7 @@
 has_one
 
 Implementation summary:
-  1) generate simple parent model and a child model with foreign key
+  1) generate simple parent model and a child model with foreign key of parent
   2) add has_one statement in parent model
 ************************************************************************************************************
 

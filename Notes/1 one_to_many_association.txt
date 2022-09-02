@@ -7,16 +7,24 @@ rails g controller home index
 
 ************************************************************************************************************
 one to many relationship:
+
+summary:
+  1) create simple parent model
+  2) create child model with foreign key of parent
+  3) add has_many statement in parent model
 ************************************************************************************************************
 
+1)
 rails g model Student name:string email:string
 rails db:migrate
 
-********
-
+2)
 rails generate model Blog title:string content:text student:references       ( we can manually add foreign key but this is better - this will also add belongsto statement in blog model)
 rails db:migrate
-and add ( has_many :blogs ) in stuent model
+
+3)
+and add  in stuent model:
+ has_many :blogs 
 
 
 To do manually:
